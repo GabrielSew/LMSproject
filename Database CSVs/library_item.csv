@@ -1,0 +1,29 @@
+"ItemID";"Title";"Status";"Publisher_ID";"Publication_Date";"Language";"Editor_ID";"Author_ID"
+1;"The Great Gatsby";"Available";301;"1925-04-10";"English";101;201
+2;"To Kill a Mockingbird";"Unavailable";302;"1960-07-11";"English";102;202
+3;"1984";"Available";303;"1949-06-08";"English";103;203
+4;"The Catcher in the Rye";"Available";304;"1951-07-16";"English";104;204
+5;"Pride and Prejudice";"Unavailable";305;"1813-01-28";"English";105;205
+6;"Moby-Dick";"Available";306;"1851-10-18";"English";106;206
+7;"War and Peace";"Unavailable";307;"1869-01-01";"Russian";107;207
+8;"The Odyssey";"Available";308;"0800-01-01";"Greek";108;208
+9;"The Hobbit";"Unavailable";309;"1937-09-21";"English";109;209
+10;"The Lord of the Rings";"Available";310;"1954-07-29";"English";110;210
+11;"Global Warming Trends in the 21st Century";"Available";301;"2017-06-05";"English";103;211
+12;"AI and the Future of Work";"Unavailable";302;"2023-02-19";"French";105;212
+13;"Economic Impact of Renewable Energy";"Available";308;"2020-10-12";"Spanish";102;213
+14;"A Study on Marine Biodiversity";"Available";309;"2018-07-30";"German";104;214
+15;"Quantum Computing: Current State and Future Prospects";"Available";310;"2021-01-25";"English";102;215
+16;"Mental Health in the Digital Age";"Unavailable";310;"2016-09-11";"French";105;216
+17;"Blockchain and Financial Transparency";"Unavailable";309;"2019-12-04";"Spanish";101;217
+18;"Cybersecurity in Smart Cities";"Available";307;"2022-03-15";"German";101;218
+19;"Educational Reforms in the Post-Pandemic World";"Available";305;"2024-08-09";"English";103;219
+20;"Neuroscience and Cognitive Development";"Available";303;"2015-11-28";"French";104;220
+21;"Vogue Monthly";"Available";301;"2024-02-01";"English";121;221
+22;"Hollywood Weekly";"Unavailable";302;"2024-03-15";"English";122;222
+23;"World Soccer Digest";"Available";303;"2024-01-10";"English";123;223
+24;"Style & Trends";"Available";304;"2023-12-05";"French";122;222
+25;"Cinema Buzz";"Unavailable";305;"2024-04-01";"English";123;223
+31;"The Morning Herald";"Available";301;"2025-04-19";"English";124;224
+32;"Daily Global Times";"Available";302;"2025-04-19";"English";125;225
+33;"The Evening Ledger";"Unavailable";303;"2025-04-19";"English";126;226
