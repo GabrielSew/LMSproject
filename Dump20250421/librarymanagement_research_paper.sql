@@ -16,27 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `assistant`
+-- Table structure for table `research_paper`
 --
 
-DROP TABLE IF EXISTS `assistant`;
+DROP TABLE IF EXISTS `research_paper`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `assistant` (
-  `ESIN` int NOT NULL,
-  `Specialization` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ESIN`)
+CREATE TABLE `research_paper` (
+  `Item_ID` int NOT NULL,
+  `Institution` varchar(255) DEFAULT NULL,
+  `Field_of_Study` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Item_ID`),
+  CONSTRAINT `research_paper_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `assistant`
+-- Dumping data for table `research_paper`
 --
 
-LOCK TABLES `assistant` WRITE;
-/*!40000 ALTER TABLE `assistant` DISABLE KEYS */;
-INSERT INTO `assistant` VALUES (110923474,'Management'),(120949235,'Outreach'),(182134983,'Archiving'),(182369122,'Literature'),(192931271,'Literature');
-/*!40000 ALTER TABLE `assistant` ENABLE KEYS */;
+LOCK TABLES `research_paper` WRITE;
+/*!40000 ALTER TABLE `research_paper` DISABLE KEYS */;
+INSERT INTO `research_paper` VALUES (11,'University of California','Science'),(12,'École Polytechnique','Computer Science'),(13,'Universidad de Buenos Aires','Science'),(14,'University of Tokyo','Biology'),(15,'ETH Zurich','Computer Science'),(16,'Sorbonne University','Psychology'),(17,'Moscow State University','Finance'),(18,'Technical University of Munich','Computer Science'),(19,'Humboldt University of Berlin','Education'),(20,'Trinity College Dublin','Science');
+/*!40000 ALTER TABLE `research_paper` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:15
+-- Dump completed on 2025-04-21 17:04:06

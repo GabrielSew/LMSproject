@@ -16,28 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `editor`
+-- Table structure for table `manages`
 --
 
-DROP TABLE IF EXISTS `editor`;
+DROP TABLE IF EXISTS `manages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `editor` (
-  `Editor_ID` int NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `Specialization` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Editor_ID`)
+CREATE TABLE `manages` (
+  `mgr_SIN` int NOT NULL,
+  `lib_address` varchar(255) NOT NULL,
+  PRIMARY KEY (`mgr_SIN`,`lib_address`),
+  KEY `lib_address` (`lib_address`),
+  CONSTRAINT `manages_ibfk_1` FOREIGN KEY (`mgr_SIN`) REFERENCES `manager` (`ESIN`),
+  CONSTRAINT `manages_ibfk_2` FOREIGN KEY (`lib_address`) REFERENCES `library_branch` (`Address`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `editor`
+-- Dumping data for table `manages`
 --
 
-LOCK TABLES `editor` WRITE;
-/*!40000 ALTER TABLE `editor` DISABLE KEYS */;
-INSERT INTO `editor` VALUES (101,'Clara Mitchell','Literature'),(102,'Daniel Cho','Technology'),(103,'Amelia Hart','Environmental Science'),(104,'Marcus Stein','History'),(105,'Sophie Nguyen','Social Sciences'),(106,'James O\'Malley','Classics'),(107,'Elena Petrova','Philosophy'),(108,'Yuki Nakamura','Anthropology'),(109,'Henry Collins','Fantasy Fiction'),(110,'Nora Hassan','Political Science'),(121,'Lana Rivera','Entertainment'),(122,'Marcus Young','Entertainment'),(123,'Priya Kapoor','Entertainment'),(124,'Helen Grant','News'),(125,'Omar Delgado','News'),(126,'Mei-Ling Zhou','News');
-/*!40000 ALTER TABLE `editor` ENABLE KEYS */;
+LOCK TABLES `manages` WRITE;
+/*!40000 ALTER TABLE `manages` DISABLE KEYS */;
+INSERT INTO `manages` VALUES (120398407,'123 Maple Street'),(120972036,'456 Oak Avenue');
+/*!40000 ALTER TABLE `manages` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:16
+-- Dump completed on 2025-04-21 17:04:09

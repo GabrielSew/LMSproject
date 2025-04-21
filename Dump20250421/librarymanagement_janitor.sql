@@ -16,32 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `book`
+-- Table structure for table `janitor`
 --
 
-DROP TABLE IF EXISTS `book`;
+DROP TABLE IF EXISTS `janitor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `book` (
-  `Item_ID` int NOT NULL,
-  `ISBN` int NOT NULL,
-  `Page_Count` int DEFAULT NULL,
-  `Genre` varchar(255) DEFAULT NULL,
-  `Format` varchar(255) DEFAULT NULL,
-  `Edition` int DEFAULT NULL,
-  PRIMARY KEY (`Item_ID`),
-  CONSTRAINT `book_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
+CREATE TABLE `janitor` (
+  `ESIN` int NOT NULL,
+  `Area` varchar(255) NOT NULL,
+  PRIMARY KEY (`ESIN`),
+  CONSTRAINT `janitor_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `book`
+-- Dumping data for table `janitor`
 --
 
-LOCK TABLES `book` WRITE;
-/*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,97807432,180,'Classic','Hardcover',1),(2,97800611,281,'Historical','Paperback',1),(3,97804515,328,'Dystopian','Paperback',1),(4,97803167,277,'Coming-of-Age','Hardcover',1),(5,97815032,432,'Romance','Paperback',1),(6,97815032,635,'Adventure','Hardcover',1),(7,97801992,1225,'Historical','Hardcover',1),(8,97801402,541,'Poetry','Paperback',1),(9,97805479,310,'Fantasy','Hardcover',1),(10,9780544,1178,'Fantasy','Hardcover',1);
-/*!40000 ALTER TABLE `book` ENABLE KEYS */;
+LOCK TABLES `janitor` WRITE;
+/*!40000 ALTER TABLE `janitor` DISABLE KEYS */;
+INSERT INTO `janitor` VALUES (120401220,'Reading Hall'),(129374038,'Main Lobby'),(192803979,'Archives Room');
+/*!40000 ALTER TABLE `janitor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:16
+-- Dump completed on 2025-04-21 17:04:07

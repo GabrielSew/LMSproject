@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `publisher`
+-- Table structure for table `written_by`
 --
 
-DROP TABLE IF EXISTS `publisher`;
+DROP TABLE IF EXISTS `written_by`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `publisher` (
-  `Publisher_ID` int NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  PRIMARY KEY (`Publisher_ID`)
+CREATE TABLE `written_by` (
+  `Author_ID` int NOT NULL,
+  `Item_ID` int NOT NULL,
+  PRIMARY KEY (`Item_ID`,`Author_ID`),
+  KEY `Author_ID` (`Author_ID`),
+  CONSTRAINT `written_by_ibfk_1` FOREIGN KEY (`Author_ID`) REFERENCES `author` (`Author_ID`),
+  CONSTRAINT `written_by_ibfk_2` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `publisher`
+-- Dumping data for table `written_by`
 --
 
-LOCK TABLES `publisher` WRITE;
-/*!40000 ALTER TABLE `publisher` DISABLE KEYS */;
-INSERT INTO `publisher` VALUES (301,'Atlas Academic Press'),(302,'Greenleaf Publications'),(303,'Nova Terra Books'),(304,'Pinnacle Media Group'),(305,'Blue Horizon Publishing'),(306,'Epoch House'),(307,'Summit Literary Works'),(308,'Veritas Press'),(309,'Silver Quill Publishers'),(310,'Orion Research Group');
-/*!40000 ALTER TABLE `publisher` ENABLE KEYS */;
+LOCK TABLES `written_by` WRITE;
+/*!40000 ALTER TABLE `written_by` DISABLE KEYS */;
+INSERT INTO `written_by` VALUES (201,1),(202,2),(203,3),(204,4),(205,5),(206,6),(207,7),(208,8),(209,9),(210,10),(211,11),(212,12),(213,13),(214,14),(215,15),(216,16),(217,17),(218,18),(219,19),(220,20),(221,21),(222,22),(222,24),(223,23),(223,25),(224,31),(225,32),(226,33);
+/*!40000 ALTER TABLE `written_by` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:12
+-- Dump completed on 2025-04-21 17:04:06

@@ -16,29 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `manager`
+-- Table structure for table `reservation`
 --
 
-DROP TABLE IF EXISTS `manager`;
+DROP TABLE IF EXISTS `reservation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `manager` (
-  `ESIN` int NOT NULL,
-  `Library_Address` varchar(255) NOT NULL,
-  `StartedOn` date NOT NULL,
-  PRIMARY KEY (`ESIN`),
-  CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
+CREATE TABLE `reservation` (
+  `Reservation_no` int NOT NULL,
+  `Member_Email` varchar(255) NOT NULL,
+  `ItemID` int NOT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Reservation_no`,`Member_Email`,`ItemID`),
+  KEY `Member_Email` (`Member_Email`),
+  KEY `ItemID` (`ItemID`),
+  CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`Member_Email`) REFERENCES `member` (`Member_Email`),
+  CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`ItemID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `manager`
+-- Dumping data for table `reservation`
 --
 
-LOCK TABLES `manager` WRITE;
-/*!40000 ALTER TABLE `manager` DISABLE KEYS */;
-INSERT INTO `manager` VALUES (120398407,'123 Maple Street','2020-09-01'),(120972036,'456 Oak Avenue','2021-05-10');
-/*!40000 ALTER TABLE `manager` ENABLE KEYS */;
+LOCK TABLES `reservation` WRITE;
+/*!40000 ALTER TABLE `reservation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reservation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:13
+-- Dump completed on 2025-04-21 17:04:08

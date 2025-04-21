@@ -16,29 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `research_paper`
+-- Table structure for table `author`
 --
 
-DROP TABLE IF EXISTS `research_paper`;
+DROP TABLE IF EXISTS `author`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `research_paper` (
-  `Item_ID` int NOT NULL,
-  `Institution` varchar(255) DEFAULT NULL,
-  `Field_of_Study` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Item_ID`),
-  CONSTRAINT `research_paper_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
+CREATE TABLE `author` (
+  `Author_ID` int NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Nationaility` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Author_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `research_paper`
+-- Dumping data for table `author`
 --
 
-LOCK TABLES `research_paper` WRITE;
-/*!40000 ALTER TABLE `research_paper` DISABLE KEYS */;
-INSERT INTO `research_paper` VALUES (11,'University of California','Science'),(12,'École Polytechnique','Computer Science'),(13,'Universidad de Buenos Aires','Science'),(14,'University of Tokyo','Biology'),(15,'ETH Zurich','Computer Science'),(16,'Sorbonne University','Psychology'),(17,'Moscow State University','Finance'),(18,'Technical University of Munich','Computer Science'),(19,'Humboldt University of Berlin','Education'),(20,'Trinity College Dublin','Science');
-/*!40000 ALTER TABLE `research_paper` ENABLE KEYS */;
+LOCK TABLES `author` WRITE;
+/*!40000 ALTER TABLE `author` DISABLE KEYS */;
+INSERT INTO `author` VALUES (201,'Scott Fitzgerald','USA'),(202,'Harper Green','Ireland'),(203,'George Orwell','British'),(204,'JD Salinger','USA'),(205,'Jane Austen','UK'),(206,'Herman Melville','USA'),(207,'Leo Tolstoy','Russia'),(208,'Homer','Greece'),(209,'JRR Tolkien','UK'),(210,'JRR Tolkien','UK'),(211,'Isabella Moretti','Italy'),(212,'Noah Jensen','Denmark'),(213,'Amina El-Sayed','Egypt'),(214,'Kenji Takahashi','Japan'),(215,'LucÃ­a FernÃ¡ndez','Argentina'),(216,'Theo Dubois','France'),(217,'Mila Petrova','Russia'),(218,'Omar Al-Mansour','Saudi Arabia'),(219,'Anika Meier','Germany'),(220,'Liam Oâ€™Connell','Ireland'),(221,'Clara Moreno','Spain'),(222,'Jasper Brooks','USA'),(223,'Tariq Al-Fulan','UAE'),(224,'Nina Petrovic','Serbia'),(225,'Carlos Mendoza','Mexico'),(226,'Aisha Rahman','Canada');
+/*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:16
+-- Dump completed on 2025-04-21 17:04:08

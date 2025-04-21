@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `catalogs`
+-- Table structure for table `staff_accounts`
 --
 
-DROP TABLE IF EXISTS `catalogs`;
+DROP TABLE IF EXISTS `staff_accounts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalogs` (
-  `Assistant_SIN` int NOT NULL,
-  `Library_Item_ID` int NOT NULL,
-  PRIMARY KEY (`Assistant_SIN`,`Library_Item_ID`),
-  KEY `Library_Item_ID` (`Library_Item_ID`),
-  CONSTRAINT `catalogs_ibfk_1` FOREIGN KEY (`Assistant_SIN`) REFERENCES `assistant` (`ESIN`),
-  CONSTRAINT `catalogs_ibfk_2` FOREIGN KEY (`Library_Item_ID`) REFERENCES `library_item` (`ItemID`)
+CREATE TABLE `staff_accounts` (
+  `Email` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Role` varchar(255) NOT NULL,
+  `Access_level` int NOT NULL,
+  PRIMARY KEY (`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `catalogs`
+-- Dumping data for table `staff_accounts`
 --
 
-LOCK TABLES `catalogs` WRITE;
-/*!40000 ALTER TABLE `catalogs` DISABLE KEYS */;
-INSERT INTO `catalogs` VALUES (192931271,1),(192931271,2),(192931271,3),(192931271,4),(192931271,5),(192931271,6),(182369122,7),(182369122,8),(182369122,9),(182134983,10),(182134983,11),(182134983,12),(182134983,13),(182134983,14),(182134983,15),(110923474,16),(110923474,17),(110923474,18),(110923474,19),(120949235,20),(120949235,21),(120949235,22),(120949235,23),(120949235,24),(192931271,25),(182134983,31),(120949235,32),(110923474,33);
-/*!40000 ALTER TABLE `catalogs` ENABLE KEYS */;
+LOCK TABLES `staff_accounts` WRITE;
+/*!40000 ALTER TABLE `staff_accounts` DISABLE KEYS */;
+INSERT INTO `staff_accounts` VALUES ('david.wilson@email.com','Tp3#nKw7$Y','MANAGER',4),('emily.white@email.com','Zf9!xTq2@M','ASSISTANT',3),('jane.smith@email.com','Ar1^kDn4#Z','ASSISTANT',3),('john.doe@email.com','Yv0!tSn9*R','ASSISTANT',3),('michael.martinez@email.com','Xe2^bLm9!Q','ASSISTANT',3),('olivia.brown@email.com','Dj6&zHc1@T','MANAGER',4),('robert.johnson@email.com','Ns7!jPt3@L','ASSISTANT',3);
+/*!40000 ALTER TABLE `staff_accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:11
+-- Dump completed on 2025-04-21 17:04:07

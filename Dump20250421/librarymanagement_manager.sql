@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `manages`
+-- Table structure for table `manager`
 --
 
-DROP TABLE IF EXISTS `manages`;
+DROP TABLE IF EXISTS `manager`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `manages` (
-  `mgr_SIN` int NOT NULL,
-  `lib_address` varchar(255) NOT NULL,
-  PRIMARY KEY (`mgr_SIN`,`lib_address`),
-  KEY `lib_address` (`lib_address`),
-  CONSTRAINT `manages_ibfk_1` FOREIGN KEY (`mgr_SIN`) REFERENCES `manager` (`ESIN`),
-  CONSTRAINT `manages_ibfk_2` FOREIGN KEY (`lib_address`) REFERENCES `library_branch` (`Address`)
+CREATE TABLE `manager` (
+  `ESIN` int NOT NULL,
+  `Library_Address` varchar(255) NOT NULL,
+  `StartedOn` date NOT NULL,
+  PRIMARY KEY (`ESIN`),
+  CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `manages`
+-- Dumping data for table `manager`
 --
 
-LOCK TABLES `manages` WRITE;
-/*!40000 ALTER TABLE `manages` DISABLE KEYS */;
-INSERT INTO `manages` VALUES (120398407,'123 Maple Street'),(120972036,'456 Oak Avenue');
-/*!40000 ALTER TABLE `manages` ENABLE KEYS */;
+LOCK TABLES `manager` WRITE;
+/*!40000 ALTER TABLE `manager` DISABLE KEYS */;
+INSERT INTO `manager` VALUES (120398407,'123 Maple Street','2020-09-01'),(120972036,'456 Oak Avenue','2021-05-10');
+/*!40000 ALTER TABLE `manager` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:17
+-- Dump completed on 2025-04-21 17:04:08

@@ -16,28 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `janitor`
+-- Table structure for table `catalogs`
 --
 
-DROP TABLE IF EXISTS `janitor`;
+DROP TABLE IF EXISTS `catalogs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `janitor` (
-  `ESIN` int NOT NULL,
-  `Area` varchar(255) NOT NULL,
-  PRIMARY KEY (`ESIN`),
-  CONSTRAINT `janitor_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
+CREATE TABLE `catalogs` (
+  `Assistant_SIN` int NOT NULL,
+  `Library_Item_ID` int NOT NULL,
+  PRIMARY KEY (`Assistant_SIN`,`Library_Item_ID`),
+  KEY `Library_Item_ID` (`Library_Item_ID`),
+  CONSTRAINT `catalogs_ibfk_1` FOREIGN KEY (`Assistant_SIN`) REFERENCES `assistant` (`ESIN`),
+  CONSTRAINT `catalogs_ibfk_2` FOREIGN KEY (`Library_Item_ID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `janitor`
+-- Dumping data for table `catalogs`
 --
 
-LOCK TABLES `janitor` WRITE;
-/*!40000 ALTER TABLE `janitor` DISABLE KEYS */;
-INSERT INTO `janitor` VALUES (120401220,'Reading Hall'),(129374038,'Main Lobby'),(192803979,'Archives Room');
-/*!40000 ALTER TABLE `janitor` ENABLE KEYS */;
+LOCK TABLES `catalogs` WRITE;
+/*!40000 ALTER TABLE `catalogs` DISABLE KEYS */;
+INSERT INTO `catalogs` VALUES (192931271,1),(192931271,2),(192931271,3),(192931271,4),(192931271,5),(192931271,6),(182369122,7),(182369122,8),(182369122,9),(182134983,10),(182134983,11),(182134983,12),(182134983,13),(182134983,14),(182134983,15),(110923474,16),(110923474,17),(110923474,18),(110923474,19),(120949235,20),(120949235,21),(120949235,22),(120949235,23),(120949235,24),(192931271,25),(182134983,31),(120949235,32),(110923474,33);
+/*!40000 ALTER TABLE `catalogs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:13
+-- Dump completed on 2025-04-21 17:04:08

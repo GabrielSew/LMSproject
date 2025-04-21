@@ -16,28 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `author_genres`
+-- Table structure for table `salaried_employees`
 --
 
-DROP TABLE IF EXISTS `author_genres`;
+DROP TABLE IF EXISTS `salaried_employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `author_genres` (
-  `Author_ID` int NOT NULL,
-  `Genre` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Author_ID`),
-  CONSTRAINT `author_genres_ibfk_1` FOREIGN KEY (`Author_ID`) REFERENCES `author` (`Author_ID`)
+CREATE TABLE `salaried_employees` (
+  `ESIN` int NOT NULL,
+  `Salary` int NOT NULL,
+  PRIMARY KEY (`ESIN`),
+  CONSTRAINT `salaried_employees_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `author_genres`
+-- Dumping data for table `salaried_employees`
 --
 
-LOCK TABLES `author_genres` WRITE;
-/*!40000 ALTER TABLE `author_genres` DISABLE KEYS */;
-INSERT INTO `author_genres` VALUES (201,'Fiction'),(202,'Fiction'),(203,'Dystopian Fiction'),(204,'Fiction'),(205,'Classic Literature'),(206,'Adventure Fiction'),(207,'Historical Fiction'),(208,'Epic Poetry'),(209,'Fantasy Fiction'),(210,'Fantasy Fiction'),(211,'Non-fiction'),(212,'Non-fiction'),(213,'Non-fiction'),(214,'Non-fiction'),(215,'Non-fiction'),(216,'Non-fiction'),(217,'Non-fiction'),(218,'Non-fiction'),(219,'Non-fiction'),(220,'Non-fiction'),(221,'Magazine'),(222,'Magazine'),(223,'Magazine'),(224,'Newspaper'),(225,'Newspaper'),(226,'Newspaper');
-/*!40000 ALTER TABLE `author_genres` ENABLE KEYS */;
+LOCK TABLES `salaried_employees` WRITE;
+/*!40000 ALTER TABLE `salaried_employees` DISABLE KEYS */;
+INSERT INTO `salaried_employees` VALUES (110923474,2900),(120398407,4000),(120949235,3100),(120972036,4200),(182134983,3170),(182369122,3200),(192931271,3000);
+/*!40000 ALTER TABLE `salaried_employees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:13
+-- Dump completed on 2025-04-21 17:04:06

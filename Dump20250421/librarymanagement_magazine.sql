@@ -16,28 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `hourly_employee`
+-- Table structure for table `magazine`
 --
 
-DROP TABLE IF EXISTS `hourly_employee`;
+DROP TABLE IF EXISTS `magazine`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `hourly_employee` (
-  `ESIN` int NOT NULL,
-  `Pay_Scale` int NOT NULL,
-  PRIMARY KEY (`ESIN`),
-  CONSTRAINT `hourly_employee_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
+CREATE TABLE `magazine` (
+  `Item_ID` int NOT NULL,
+  `ISSN` int NOT NULL,
+  `Category` varchar(255) DEFAULT NULL,
+  `Edition` int DEFAULT NULL,
+  PRIMARY KEY (`Item_ID`),
+  CONSTRAINT `magazine_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `hourly_employee`
+-- Dumping data for table `magazine`
 --
 
-LOCK TABLES `hourly_employee` WRITE;
-/*!40000 ALTER TABLE `hourly_employee` DISABLE KEYS */;
-INSERT INTO `hourly_employee` VALUES (120401220,20),(129374038,25),(192803979,20);
-/*!40000 ALTER TABLE `hourly_employee` ENABLE KEYS */;
+LOCK TABLES `magazine` WRITE;
+/*!40000 ALTER TABLE `magazine` DISABLE KEYS */;
+INSERT INTO `magazine` VALUES (21,97712345,'Fashion',98),(22,97712345,'Entertainment',76),(23,97712345,'Sports',45),(24,97712345,'Fashion',88),(25,97712345,'Cinema',102);
+/*!40000 ALTER TABLE `magazine` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:16
+-- Dump completed on 2025-04-21 17:04:07

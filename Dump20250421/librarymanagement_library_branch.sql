@@ -16,30 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `magazine`
+-- Table structure for table `library_branch`
 --
 
-DROP TABLE IF EXISTS `magazine`;
+DROP TABLE IF EXISTS `library_branch`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `magazine` (
-  `Item_ID` int NOT NULL,
-  `ISSN` int NOT NULL,
-  `Category` varchar(255) DEFAULT NULL,
-  `Edition` int DEFAULT NULL,
-  PRIMARY KEY (`Item_ID`),
-  CONSTRAINT `magazine_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
+CREATE TABLE `library_branch` (
+  `Address` varchar(255) NOT NULL,
+  `Capacity` int DEFAULT NULL,
+  PRIMARY KEY (`Address`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `magazine`
+-- Dumping data for table `library_branch`
 --
 
-LOCK TABLES `magazine` WRITE;
-/*!40000 ALTER TABLE `magazine` DISABLE KEYS */;
-INSERT INTO `magazine` VALUES (21,97712345,'Fashion',98),(22,97712345,'Entertainment',76),(23,97712345,'Sports',45),(24,97712345,'Fashion',88),(25,97712345,'Cinema',102);
-/*!40000 ALTER TABLE `magazine` ENABLE KEYS */;
+LOCK TABLES `library_branch` WRITE;
+/*!40000 ALTER TABLE `library_branch` DISABLE KEYS */;
+INSERT INTO `library_branch` VALUES ('123 Maple Street',49000),('456 Oak Avenue',31000);
+/*!40000 ALTER TABLE `library_branch` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 19:55:14
+-- Dump completed on 2025-04-21 17:04:08
