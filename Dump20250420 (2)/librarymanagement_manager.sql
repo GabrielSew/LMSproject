@@ -16,28 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `salaried_employees`
+-- Table structure for table `manager`
 --
 
-DROP TABLE IF EXISTS `salaried_employees`;
+DROP TABLE IF EXISTS `manager`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `salaried_employees` (
+CREATE TABLE `manager` (
   `ESIN` int NOT NULL,
-  `Salary` int NOT NULL,
+  `Library_Address` varchar(255) NOT NULL,
+  `StartedOn` date NOT NULL,
   PRIMARY KEY (`ESIN`),
-  CONSTRAINT `salaried_employees_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
+  CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `salaried_employees`
+-- Dumping data for table `manager`
 --
 
-LOCK TABLES `salaried_employees` WRITE;
-/*!40000 ALTER TABLE `salaried_employees` DISABLE KEYS */;
-INSERT INTO `salaried_employees` VALUES (110923474,2900),(120398407,4000),(120949235,3100),(120972036,4200),(182134983,3170),(182369122,3200),(192931271,3000);
-/*!40000 ALTER TABLE `salaried_employees` ENABLE KEYS */;
+LOCK TABLES `manager` WRITE;
+/*!40000 ALTER TABLE `manager` DISABLE KEYS */;
+INSERT INTO `manager` VALUES (120398407,'123 Maple Street','2020-09-01'),(120972036,'456 Oak Avenue','2021-05-10');
+/*!40000 ALTER TABLE `manager` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:08
+-- Dump completed on 2025-04-20 19:55:13

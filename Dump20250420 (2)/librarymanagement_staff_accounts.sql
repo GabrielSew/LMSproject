@@ -16,28 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `author_genres`
+-- Table structure for table `staff_accounts`
 --
 
-DROP TABLE IF EXISTS `author_genres`;
+DROP TABLE IF EXISTS `staff_accounts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `author_genres` (
-  `Author_ID` int NOT NULL,
-  `Genre` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Author_ID`),
-  CONSTRAINT `author_genres_ibfk_1` FOREIGN KEY (`Author_ID`) REFERENCES `author` (`Author_ID`)
+CREATE TABLE `staff_accounts` (
+  `Email` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Role` varchar(255) NOT NULL,
+  `Access_level` int NOT NULL,
+  PRIMARY KEY (`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `author_genres`
+-- Dumping data for table `staff_accounts`
 --
 
-LOCK TABLES `author_genres` WRITE;
-/*!40000 ALTER TABLE `author_genres` DISABLE KEYS */;
-INSERT INTO `author_genres` VALUES (201,'Fiction'),(202,'Fiction'),(203,'Dystopian Fiction'),(204,'Fiction'),(205,'Classic Literature'),(206,'Adventure Fiction'),(207,'Historical Fiction'),(208,'Epic Poetry'),(209,'Fantasy Fiction'),(210,'Fantasy Fiction'),(211,'Non-fiction'),(212,'Non-fiction'),(213,'Non-fiction'),(214,'Non-fiction'),(215,'Non-fiction'),(216,'Non-fiction'),(217,'Non-fiction'),(218,'Non-fiction'),(219,'Non-fiction'),(220,'Non-fiction'),(221,'Magazine'),(222,'Magazine'),(223,'Magazine'),(224,'Newspaper'),(225,'Newspaper'),(226,'Newspaper');
-/*!40000 ALTER TABLE `author_genres` ENABLE KEYS */;
+LOCK TABLES `staff_accounts` WRITE;
+/*!40000 ALTER TABLE `staff_accounts` DISABLE KEYS */;
+INSERT INTO `staff_accounts` VALUES ('david.wilson@email.com','Tp3#nKw7$Y','MANAGER',4),('emily.white@email.com','Zf9!xTq2@M','ASSISTANT',3),('jane.smith@email.com','Ar1^kDn4#Z','ASSISTANT',3),('john.doe@email.com','Yv0!tSn9*R','ASSISTANT',3),('michael.martinez@email.com','Xe2^bLm9!Q','ASSISTANT',3),('olivia.brown@email.com','Dj6&zHc1@T','MANAGER',4),('robert.johnson@email.com','Ns7!jPt3@L','ASSISTANT',3);
+/*!40000 ALTER TABLE `staff_accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:09
+-- Dump completed on 2025-04-20 19:55:12

@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `written_by`
+-- Table structure for table `author`
 --
 
-DROP TABLE IF EXISTS `written_by`;
+DROP TABLE IF EXISTS `author`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `written_by` (
+CREATE TABLE `author` (
   `Author_ID` int NOT NULL,
-  `Item_ID` int NOT NULL,
-  PRIMARY KEY (`Item_ID`,`Author_ID`),
-  KEY `Author_ID` (`Author_ID`),
-  CONSTRAINT `written_by_ibfk_1` FOREIGN KEY (`Author_ID`) REFERENCES `author` (`Author_ID`),
-  CONSTRAINT `written_by_ibfk_2` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
+  `Name` varchar(255) NOT NULL,
+  `Nationaility` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Author_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `written_by`
+-- Dumping data for table `author`
 --
 
-LOCK TABLES `written_by` WRITE;
-/*!40000 ALTER TABLE `written_by` DISABLE KEYS */;
-INSERT INTO `written_by` VALUES (201,1),(202,2),(203,3),(204,4),(205,5),(206,6),(207,7),(208,8),(209,9),(210,10),(211,11),(212,12),(213,13),(214,14),(215,15),(216,16),(217,17),(218,18),(219,19),(220,20),(221,21),(222,22),(222,24),(223,23),(223,25),(224,31),(225,32),(226,33);
-/*!40000 ALTER TABLE `written_by` ENABLE KEYS */;
+LOCK TABLES `author` WRITE;
+/*!40000 ALTER TABLE `author` DISABLE KEYS */;
+INSERT INTO `author` VALUES (201,'Scott Fitzgerald','USA'),(202,'Harper Green','Ireland'),(203,'George Orwell','British'),(204,'JD Salinger','USA'),(205,'Jane Austen','UK'),(206,'Herman Melville','USA'),(207,'Leo Tolstoy','Russia'),(208,'Homer','Greece'),(209,'JRR Tolkien','UK'),(210,'JRR Tolkien','UK'),(211,'Isabella Moretti','Italy'),(212,'Noah Jensen','Denmark'),(213,'Amina El-Sayed','Egypt'),(214,'Kenji Takahashi','Japan'),(215,'LucÃ­a FernÃ¡ndez','Argentina'),(216,'Theo Dubois','France'),(217,'Mila Petrova','Russia'),(218,'Omar Al-Mansour','Saudi Arabia'),(219,'Anika Meier','Germany'),(220,'Liam Oâ€™Connell','Ireland'),(221,'Clara Moreno','Spain'),(222,'Jasper Brooks','USA'),(223,'Tariq Al-Fulan','UAE'),(224,'Nina Petrovic','Serbia'),(225,'Carlos Mendoza','Mexico'),(226,'Aisha Rahman','Canada');
+/*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:09
+-- Dump completed on 2025-04-20 19:55:12

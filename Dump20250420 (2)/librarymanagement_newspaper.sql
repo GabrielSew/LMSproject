@@ -16,27 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `assistant`
+-- Table structure for table `newspaper`
 --
 
-DROP TABLE IF EXISTS `assistant`;
+DROP TABLE IF EXISTS `newspaper`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `assistant` (
-  `ESIN` int NOT NULL,
-  `Specialization` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ESIN`)
+CREATE TABLE `newspaper` (
+  `Item_ID` int NOT NULL,
+  `Issue_Date` date NOT NULL,
+  `Region` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Item_ID`),
+  CONSTRAINT `newspaper_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `assistant`
+-- Dumping data for table `newspaper`
 --
 
-LOCK TABLES `assistant` WRITE;
-/*!40000 ALTER TABLE `assistant` DISABLE KEYS */;
-INSERT INTO `assistant` VALUES (110923474,'Management'),(120949235,'Outreach'),(182134983,'Archiving'),(182369122,'Literature'),(192931271,'Literature');
-/*!40000 ALTER TABLE `assistant` ENABLE KEYS */;
+LOCK TABLES `newspaper` WRITE;
+/*!40000 ALTER TABLE `newspaper` DISABLE KEYS */;
+INSERT INTO `newspaper` VALUES (31,'2025-04-19','NA'),(32,'2025-04-19','Global'),(33,'2025-04-19','NA');
+/*!40000 ALTER TABLE `newspaper` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:07
+-- Dump completed on 2025-04-20 19:55:15

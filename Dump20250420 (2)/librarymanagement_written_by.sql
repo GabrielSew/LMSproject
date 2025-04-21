@@ -16,31 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `staff_accounts`
+-- Table structure for table `written_by`
 --
 
-DROP TABLE IF EXISTS `staff_accounts`;
+DROP TABLE IF EXISTS `written_by`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `staff_accounts` (
-  `ESIN` int NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
-  `Role` varchar(255) NOT NULL,
-  `Access_level` int NOT NULL,
-  PRIMARY KEY (`ESIN`),
-  CONSTRAINT `staff_accounts_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
+CREATE TABLE `written_by` (
+  `Author_ID` int NOT NULL,
+  `Item_ID` int NOT NULL,
+  PRIMARY KEY (`Item_ID`,`Author_ID`),
+  KEY `Author_ID` (`Author_ID`),
+  CONSTRAINT `written_by_ibfk_1` FOREIGN KEY (`Author_ID`) REFERENCES `author` (`Author_ID`),
+  CONSTRAINT `written_by_ibfk_2` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `staff_accounts`
+-- Dumping data for table `written_by`
 --
 
-LOCK TABLES `staff_accounts` WRITE;
-/*!40000 ALTER TABLE `staff_accounts` DISABLE KEYS */;
-INSERT INTO `staff_accounts` VALUES (110923474,'emily.white@email.com','Zf9!xTq2@M','ASSISTANT',3),(120398407,'david.wilson@email.com','Tp3#nKw7$Y','MANAGER',4),(120949235,'michael.martinez@email.com','Xe2^bLm9!Q','ASSISTANT',3),(120972036,'olivia.brown@email.com','Dj6&zHc1@T','MANAGER',4),(182134983,'robert.johnson@email.com','Ns7!jPt3@L','ASSISTANT',3),(182369122,'jane.smith@email.com','Ar1^kDn4#Z','ASSISTANT',3),(192931271,'john.doe@email.com','Yv0!tSn9*R','ASSISTANT',3);
-/*!40000 ALTER TABLE `staff_accounts` ENABLE KEYS */;
+LOCK TABLES `written_by` WRITE;
+/*!40000 ALTER TABLE `written_by` DISABLE KEYS */;
+INSERT INTO `written_by` VALUES (201,1),(202,2),(203,3),(204,4),(205,5),(206,6),(207,7),(208,8),(209,9),(210,10),(211,11),(212,12),(213,13),(214,14),(215,15),(216,16),(217,17),(218,18),(219,19),(220,20),(221,21),(222,22),(222,24),(223,23),(223,25),(224,31),(225,32),(226,33);
+/*!40000 ALTER TABLE `written_by` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:08
+-- Dump completed on 2025-04-20 19:55:12

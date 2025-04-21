@@ -16,30 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `manages`
+-- Table structure for table `book`
 --
 
-DROP TABLE IF EXISTS `manages`;
+DROP TABLE IF EXISTS `book`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `manages` (
-  `mgr_SIN` int NOT NULL,
-  `lib_address` varchar(255) NOT NULL,
-  PRIMARY KEY (`mgr_SIN`,`lib_address`),
-  KEY `lib_address` (`lib_address`),
-  CONSTRAINT `manages_ibfk_1` FOREIGN KEY (`mgr_SIN`) REFERENCES `manager` (`ESIN`),
-  CONSTRAINT `manages_ibfk_2` FOREIGN KEY (`lib_address`) REFERENCES `library_branch` (`Address`)
+CREATE TABLE `book` (
+  `Item_ID` int NOT NULL,
+  `ISBN` int NOT NULL,
+  `Page_Count` int DEFAULT NULL,
+  `Genre` varchar(255) DEFAULT NULL,
+  `Format` varchar(255) DEFAULT NULL,
+  `Edition` int DEFAULT NULL,
+  PRIMARY KEY (`Item_ID`),
+  CONSTRAINT `book_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `manages`
+-- Dumping data for table `book`
 --
 
-LOCK TABLES `manages` WRITE;
-/*!40000 ALTER TABLE `manages` DISABLE KEYS */;
-INSERT INTO `manages` VALUES (120398407,'123 Maple Street'),(120972036,'456 Oak Avenue');
-/*!40000 ALTER TABLE `manages` ENABLE KEYS */;
+LOCK TABLES `book` WRITE;
+/*!40000 ALTER TABLE `book` DISABLE KEYS */;
+INSERT INTO `book` VALUES (1,97807432,180,'Classic','Hardcover',1),(2,97800611,281,'Historical','Paperback',1),(3,97804515,328,'Dystopian','Paperback',1),(4,97803167,277,'Coming-of-Age','Hardcover',1),(5,97815032,432,'Romance','Paperback',1),(6,97815032,635,'Adventure','Hardcover',1),(7,97801992,1225,'Historical','Hardcover',1),(8,97801402,541,'Poetry','Paperback',1),(9,97805479,310,'Fantasy','Hardcover',1),(10,9780544,1178,'Fantasy','Hardcover',1);
+/*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:07
+-- Dump completed on 2025-04-20 19:55:16

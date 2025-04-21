@@ -16,27 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `publisher`
+-- Table structure for table `reservation`
 --
 
-DROP TABLE IF EXISTS `publisher`;
+DROP TABLE IF EXISTS `reservation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `publisher` (
-  `Publisher_ID` int NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  PRIMARY KEY (`Publisher_ID`)
+CREATE TABLE `reservation` (
+  `Reservation_no` int NOT NULL,
+  `Member_Email` varchar(255) NOT NULL,
+  `ItemID` int NOT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Reservation_no`,`Member_Email`,`ItemID`),
+  KEY `Member_Email` (`Member_Email`),
+  KEY `ItemID` (`ItemID`),
+  CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`Member_Email`) REFERENCES `member` (`Member_Email`),
+  CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`ItemID`) REFERENCES `library_item` (`ItemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `publisher`
+-- Dumping data for table `reservation`
 --
 
-LOCK TABLES `publisher` WRITE;
-/*!40000 ALTER TABLE `publisher` DISABLE KEYS */;
-INSERT INTO `publisher` VALUES (301,'Atlas Academic Press'),(302,'Greenleaf Publications'),(303,'Nova Terra Books'),(304,'Pinnacle Media Group'),(305,'Blue Horizon Publishing'),(306,'Epoch House'),(307,'Summit Literary Works'),(308,'Veritas Press'),(309,'Silver Quill Publishers'),(310,'Orion Research Group');
-/*!40000 ALTER TABLE `publisher` ENABLE KEYS */;
+LOCK TABLES `reservation` WRITE;
+/*!40000 ALTER TABLE `reservation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reservation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:07
+-- Dump completed on 2025-04-20 19:55:14

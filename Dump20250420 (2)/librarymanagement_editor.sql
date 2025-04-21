@@ -16,27 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `library_branch`
+-- Table structure for table `editor`
 --
 
-DROP TABLE IF EXISTS `library_branch`;
+DROP TABLE IF EXISTS `editor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `library_branch` (
-  `Address` varchar(255) NOT NULL,
-  `Capacity` int DEFAULT NULL,
-  PRIMARY KEY (`Address`)
+CREATE TABLE `editor` (
+  `Editor_ID` int NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Specialization` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Editor_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `library_branch`
+-- Dumping data for table `editor`
 --
 
-LOCK TABLES `library_branch` WRITE;
-/*!40000 ALTER TABLE `library_branch` DISABLE KEYS */;
-INSERT INTO `library_branch` VALUES ('123 Maple Street',49000),('456 Oak Avenue',31000);
-/*!40000 ALTER TABLE `library_branch` ENABLE KEYS */;
+LOCK TABLES `editor` WRITE;
+/*!40000 ALTER TABLE `editor` DISABLE KEYS */;
+INSERT INTO `editor` VALUES (101,'Clara Mitchell','Literature'),(102,'Daniel Cho','Technology'),(103,'Amelia Hart','Environmental Science'),(104,'Marcus Stein','History'),(105,'Sophie Nguyen','Social Sciences'),(106,'James O\'Malley','Classics'),(107,'Elena Petrova','Philosophy'),(108,'Yuki Nakamura','Anthropology'),(109,'Henry Collins','Fantasy Fiction'),(110,'Nora Hassan','Political Science'),(121,'Lana Rivera','Entertainment'),(122,'Marcus Young','Entertainment'),(123,'Priya Kapoor','Entertainment'),(124,'Helen Grant','News'),(125,'Omar Delgado','News'),(126,'Mei-Ling Zhou','News');
+/*!40000 ALTER TABLE `editor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:10
+-- Dump completed on 2025-04-20 19:55:16

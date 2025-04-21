@@ -16,29 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `newspaper`
+-- Table structure for table `salaried_employees`
 --
 
-DROP TABLE IF EXISTS `newspaper`;
+DROP TABLE IF EXISTS `salaried_employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `newspaper` (
-  `Item_ID` int NOT NULL,
-  `Issue_Date` date NOT NULL,
-  `Region` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Item_ID`),
-  CONSTRAINT `newspaper_ibfk_1` FOREIGN KEY (`Item_ID`) REFERENCES `library_item` (`ItemID`)
+CREATE TABLE `salaried_employees` (
+  `ESIN` int NOT NULL,
+  `Salary` int NOT NULL,
+  PRIMARY KEY (`ESIN`),
+  CONSTRAINT `salaried_employees_ibfk_1` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `newspaper`
+-- Dumping data for table `salaried_employees`
 --
 
-LOCK TABLES `newspaper` WRITE;
-/*!40000 ALTER TABLE `newspaper` DISABLE KEYS */;
-INSERT INTO `newspaper` VALUES (31,'2025-04-19','NA'),(32,'2025-04-19','Global'),(33,'2025-04-19','NA');
-/*!40000 ALTER TABLE `newspaper` ENABLE KEYS */;
+LOCK TABLES `salaried_employees` WRITE;
+/*!40000 ALTER TABLE `salaried_employees` DISABLE KEYS */;
+INSERT INTO `salaried_employees` VALUES (110923474,2900),(120398407,4000),(120949235,3100),(120972036,4200),(182134983,3170),(182369122,3200),(192931271,3000);
+/*!40000 ALTER TABLE `salaried_employees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-20 18:50:09
+-- Dump completed on 2025-04-20 19:55:11
